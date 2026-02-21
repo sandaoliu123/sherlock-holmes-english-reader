@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sherlock Holmes Collection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section id="bookshelfSection" class="bookshelf-section">
+        <div class="bookshelf-container">
+            <h1 class="bookshelf-title">Sherlock Holmes</h1>
+            <p class="bookshelf-subtitle">The Complete Collection</p>
+            
+            <div class="bookshelf-enhanced">
+                <div class="bookshelf-wall"></div>
+                <div class="bookshelf-frame-enhanced">
+                    <div class="shelf-row-enhanced">
+                        <div class="book-enhanced active" id="book1">
+                            <div class="book-cover-enhanced">
+                                <div class="book-cover-top">
+                                    <div class="page-edge"></div>
+                                </div>
+                                <div class="book-cover-content-enhanced">
+                                    <div class="decoration-line"></div>
+                                    <div class="magnifying-glass">🔍</div>
+                                    <h3>The Adventure of the Speckled Band</h3>
+                                    <div class="divider"></div>
+                                    <p class="book-author">Sir Arthur Conan Doyle</p>
+                                    <div class="book-year">1892</div>
+                                    <div class="decoration-line bottom"></div>
+                                </div>
+                                <div class="book-cover-bottom"></div>
+                            </div>
+                        </div>
+                        <div class="book-enhanced placeholder color1">
+                            <div class="book-cover-enhanced"></div>
+                        </div>
+                        <div class="book-enhanced placeholder color2">
+                            <div class="book-cover-enhanced"></div>
+                        </div>
+                    </div>
+                    <div class="shelf-board-enhanced"></div>
+                    
+                    <div class="shelf-row-enhanced">
+                        <div class="book-enhanced placeholder color3">
+                            <div class="book-cover-enhanced"></div>
+                        </div>
+                        <div class="book-enhanced placeholder color4">
+                            <div class="book-cover-enhanced"></div>
+                        </div>
+                        <div class="book-enhanced placeholder color5">
+                            <div class="book-cover-enhanced"></div>
+                        </div>
+                    </div>
+                    <div class="shelf-board-enhanced"></div>
+                    
+                    <div class="shelf-row-enhanced">
+                        <div class="book-enhanced placeholder color6">
+                            <div class="book-cover-enhanced"></div>
+                        </div>
+                        <div class="book-enhanced placeholder color7">
+                            <div class="book-cover-enhanced"></div>
+                        </div>
+                        <div class="book-enhanced placeholder color8">
+                            <div class="book-cover-enhanced"></div>
+                        </div>
+                    </div>
+                    <div class="shelf-board-enhanced bottom"></div>
+                </div>
+            </div>
+            
+            <p class="bookshelf-hint">Click on the red book to start reading</p>
+        </div>
+    </section>
+
+    <div id="readerSection">
+        <div class="app-container">
+            <header class="app-header">
+                <button id="backToShelf" class="back-btn">← Back to Shelf</button>
+                <h1 id="mainTitle">📚 The Adventure of the Speckled Band</h1>
+                <p id="authorName" class="subtitle">by Sir Arthur Conan Doyle</p>
+                <div class="theme-buttons">
+                    <button id="dayTheme" class="theme-btn" title="Day Mode">☀️</button>
+                    <button id="nightTheme" class="theme-btn active" title="Night Mode">🌙</button>
+                    <button id="eyeTheme" class="theme-btn" title="Eye Care Mode">👁️</button>
+                </div>
+                <div class="nav-buttons">
+                    <button id="readBtn" class="nav-btn nav-btn-read active">📖 Read</button>
+                    <button id="chatBtn" class="nav-btn nav-btn-chat">💬 Chat with Holmes</button>
+                    <button id="vocabBtn" class="nav-btn nav-btn-vocab">📚 Vocabulary</button>
+                </div>
+            </header>
+
+            <main class="main-content">
+            <section id="readSection" class="section">
+                <div class="reader-container">
+                    <article id="storyContent" class="story-content">
+                    </article>
+                </div>
+                <div class="bottom-progress">
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <span id="progressText">0%</span>
+                </div>
+            </section>
+            
+            <div id="wordPanel" class="word-panel-floating hidden">
+                <div class="word-panel-header">
+                    <h3>🔍 Word Lookup</h3>
+                    <button id="closeWordPanel" class="close-btn">&times;</button>
+                </div>
+                <div id="wordInfo" class="word-info">
+                    <p class="placeholder">Click on any word in the text to look it up</p>
+                </div>
+            </div>
+
+            <section id="chatSection" class="section hidden">
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <div class="holmes-avatar">🕵️</div>
+                        <div class="chat-title">
+                            <h3>Sherlock Holmes</h3>
+                            <p class="status">Consulting Detective</p>
+                        </div>
+                    </div>
+                    <div id="chatMessages" class="chat-messages">
+                        <div class="message holmes">
+                            <div class="message-avatar">🕵️</div>
+                            <div class="message-content">
+                                <p>Good evening. I am Sherlock Holmes. You have come to me about the speckled band case, I presume? The game is afoot. What would you like to know?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-container">
+                        <input type="text" id="chatInput" class="chat-input" placeholder="Ask Sherlock Holmes anything about the case...">
+                        <button id="sendBtn" class="send-btn">Send</button>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="vocabSection" class="section hidden">
+                <div class="vocab-container">
+                    <div class="vocab-header">
+                        <h2>📚 Vocabulary Notebook</h2>
+                        <div class="vocab-header-right">
+                            <div class="vocab-stats">
+                                <span id="totalWords">0 words</span>
+                                <span id="reviewDue">0 due today</span>
+                            </div>
+                            <button id="clearVocabBtn" class="clear-vocab-btn">🗑️ Clear All</button>
+                        </div>
+                    </div>
+                    
+                    <div class="vocab-tabs">
+                        <button id="allWordsTab" class="vocab-tab active">All Words</button>
+                        <button id="reviewTab" class="vocab-tab">Review Due</button>
+                    </div>
+                    
+                    <div id="vocabList" class="vocab-list">
+                        <p class="placeholder">No words in your vocabulary yet. Click on words while reading to add them!</p>
+                    </div>
+                    
+                    <div id="reviewMode" class="review-mode hidden">
+                        <div class="review-card">
+                            <div class="review-word" id="reviewWord"></div>
+                            <div class="review-definition hidden" id="reviewDefinition"></div>
+                            <div class="review-buttons">
+                                <button id="showAnswerBtn" class="review-btn">Show Answer</button>
+                                <button id="hardBtn" class="review-btn hidden">😓 Hard</button>
+                                <button id="goodBtn" class="review-btn hidden">😊 Good</button>
+                                <button id="easyBtn" class="review-btn hidden">🎉 Easy</button>
+                            </div>
+                        </div>
+                        <div class="review-progress">
+                            <span id="reviewProgress">0 / 0</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
