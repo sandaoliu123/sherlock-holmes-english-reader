@@ -365,22 +365,35 @@ body {
     width: 100%;
     position: relative;
     gap: 20px;
+    min-height: 50px;
 }
 
 .app-header-top .back-btn {
     position: absolute;
     left: 0;
+    z-index: 10;
+}
+
+.app-header-top h1 {
+    margin-left: 140px;
+    margin-right: 20px;
 }
 
 @media (max-width: 768px) {
     .app-header-top {
         flex-direction: column;
         gap: 10px;
+        min-height: auto;
     }
     
     .app-header-top .back-btn {
         position: static;
         margin-bottom: 5px;
+    }
+    
+    .app-header-top h1 {
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 
