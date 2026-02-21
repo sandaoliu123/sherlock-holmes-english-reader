@@ -5924,7 +5924,7 @@ function generateSmartDefinition(word) {
 }
 
 function showWordInfo(word) {
-  const wordPanel = document.getElementById('wordPanel');
+  const wordPanelOverlay = document.getElementById('wordPanelOverlay');
   const wordInfo = document.getElementById('wordInfo');
   const lowerWord = word.toLowerCase();
   const cleanWord = removePunctuationAndSuffixes(word);
@@ -5969,11 +5969,11 @@ function showWordInfo(word) {
   
   addToVocabulary(word, definition);
   
-  wordPanel.classList.remove('hidden');
+  wordPanelOverlay.classList.remove('hidden');
 }
 
 function closeWordPanel() {
-  document.getElementById('wordPanel').classList.add('hidden');
+  document.getElementById('wordPanelOverlay').classList.add('hidden');
 }
 
 function setTheme(theme) {
@@ -6124,8 +6124,8 @@ document.addEventListener('DOMContentLoaded', () => {
   
   document.getElementById('closeWordPanel').addEventListener('click', closeWordPanel);
   
-  document.getElementById('wordPanel').addEventListener('click', (e) => {
-    if (e.target.id === 'wordPanel') {
+  document.getElementById('wordPanelOverlay').addEventListener('click', (e) => {
+    if (e.target.id === 'wordPanelOverlay') {
       closeWordPanel();
     }
   });

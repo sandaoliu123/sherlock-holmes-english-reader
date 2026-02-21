@@ -633,11 +633,38 @@ body.theme-eye .theme-btn#eyeTheme.active,
     white-space: nowrap;
 }
 
-.word-panel-floating {
+.word-panel-overlay {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInOverlay 0.2s ease;
+}
+
+.word-panel-overlay.hidden {
+    display: none;
+}
+
+@keyframes fadeInOverlay {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.word-panel-floating {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
     background: var(--panel-bg);
     padding: 25px;
     border-radius: 15px;
@@ -960,21 +987,216 @@ body.theme-eye .theme-btn#eyeTheme.active,
     .story-content {
         order: 1;
     }
+    
+    .bookshelf-wall {
+        width: 95%;
+    }
+    
+    .shelf-row-enhanced {
+        padding: 20px 10px 10px;
+        min-height: 250px;
+    }
+    
+    .book-enhanced {
+        width: 140px;
+    }
 }
 
 @media (max-width: 600px) {
-    .app-header h1 {
-        font-size: 1.8rem;
+    .bookshelf-section {
+        padding: 20px 10px;
     }
     
-    .nav-btn, .theme-btn {
-        padding: 10px 20px;
+    .bookshelf-title {
+        font-size: 2.5rem;
+    }
+    
+    .bookshelf-subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+    
+    .bookshelf-enhanced {
+        padding: 20px 10px;
+    }
+    
+    .shelf-row-enhanced {
+        gap: 10px;
+        min-height: 200px;
+        padding: 15px 5px 5px;
+    }
+    
+    .book-enhanced {
+        width: 110px;
+    }
+    
+    .book-cover-content-enhanced h3 {
         font-size: 0.9rem;
     }
     
+    .app-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .nav-buttons {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .nav-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        min-width: auto;
+        flex: 1;
+        min-width: 100px;
+    }
+    
+    .theme-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    .theme-btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+    
     .story-content {
-        padding: 20px;
+        padding: 15px;
         font-size: 1rem;
+        line-height: 1.8;
+    }
+    
+    .reader-container {
+        padding: 10px;
+    }
+    
+    .sidebar {
+        padding: 15px;
+    }
+    
+    .sidebar h3 {
+        font-size: 1.3rem;
+    }
+    
+    .chat-container {
+        height: 65vh;
+        max-width: 100%;
+        border-radius: 10px;
+    }
+    
+    .chat-header {
+        padding: 15px;
+    }
+    
+    .holmes-avatar {
+        font-size: 2.5rem;
+    }
+    
+    .chat-title h3 {
+        font-size: 1.2rem;
+    }
+    
+    .chat-messages {
+        padding: 15px;
+    }
+    
+    .message {
+        max-width: 90%;
+    }
+    
+    .vocab-container {
+        height: 70vh;
+        max-width: 100%;
+        border-radius: 10px;
+    }
+    
+    .vocab-header {
+        padding: 15px;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .vocab-header h2 {
+        font-size: 1.4rem;
+    }
+    
+    .vocab-header-right {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .vocab-stats {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    
+    .vocab-stats span {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .clear-vocab-btn {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .word-panel-floating {
+        max-width: 95%;
+        width: 95%;
+        max-height: 80vh;
+        padding: 20px;
+        border-radius: 15px;
+    }
+    
+    .word-panel-floating .word {
+        font-size: 1.8rem;
+    }
+    
+    .word-panel-floating .part-of-speech {
+        font-size: 1rem;
+    }
+    
+    .word-panel-floating .definition {
+        font-size: 1rem;
+    }
+    
+    .word-panel-floating .example {
+        font-size: 0.95rem;
+    }
+    
+    .close-panel {
+        font-size: 2rem;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .bookshelf-title {
+        font-size: 2rem;
+    }
+    
+    .book-enhanced {
+        width: 90px;
+    }
+    
+    .shelf-row-enhanced {
+        gap: 8px;
+    }
+    
+    .nav-btn {
+        font-size: 0.85rem;
+        padding: 8px 15px;
+    }
+    
+    .story-content {
+        padding: 12px;
+        font-size: 0.95rem;
     }
 }
 
