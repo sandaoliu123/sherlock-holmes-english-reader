@@ -6044,6 +6044,7 @@ function escapeHtml(text) {
 function openReader() {
   document.getElementById('bookshelfSection').style.display = 'none';
   document.getElementById('readerSection').style.display = 'block';
+  document.getElementById('vocabBtn').style.display = '';
   loadTheme();
   renderTitleWithWords();
   renderStoryWithWords();
@@ -6102,15 +6103,25 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('readBtn').addEventListener('click', () => {
     document.getElementById('readBtn').classList.add('active');
     document.getElementById('chatBtn').classList.remove('active');
+    document.getElementById('vocabBtn').classList.remove('active');
     document.getElementById('readSection').classList.remove('hidden');
     document.getElementById('chatSection').classList.add('hidden');
+    document.getElementById('vocabSection').classList.add('hidden');
+    document.getElementById('readBtn').style.display = '';
+    document.getElementById('chatBtn').style.display = '';
+    document.getElementById('vocabBtn').style.display = '';
   });
   
   document.getElementById('chatBtn').addEventListener('click', () => {
     document.getElementById('chatBtn').classList.add('active');
     document.getElementById('readBtn').classList.remove('active');
+    document.getElementById('vocabBtn').classList.remove('active');
     document.getElementById('chatSection').classList.remove('hidden');
     document.getElementById('readSection').classList.add('hidden');
+    document.getElementById('vocabSection').classList.add('hidden');
+    document.getElementById('readBtn').style.display = '';
+    document.getElementById('chatBtn').style.display = '';
+    document.getElementById('vocabBtn').style.display = 'none';
   });
   
   document.getElementById('dayTheme').addEventListener('click', () => setTheme('day'));
@@ -6143,6 +6154,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('readSection').classList.add('hidden');
     document.getElementById('chatSection').classList.add('hidden');
     document.getElementById('vocabSection').classList.remove('hidden');
+    document.getElementById('readBtn').style.display = '';
+    document.getElementById('chatBtn').style.display = '';
+    document.getElementById('vocabBtn').style.display = '';
     updateVocabularyStats();
     renderVocabularyList(Object.values(vocabularyBook));
   });
